@@ -143,7 +143,7 @@ export async function POST(req) {
 
     const res = await db.collection("reports").insertOne(doc);
     const id = res.insertedId.toString();
-    const base = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const base = process.env.NEXT_PUBLIC_BASE_URL || "https://chimney-final-health.vercel.app/";
     const reportUrl = `${base}/r/${id}`;
 
     const qrDataUrl = await QRCode.toDataURL(reportUrl, {

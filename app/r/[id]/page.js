@@ -65,7 +65,7 @@ export default function ReportPage({ params }) {
       const data = await res.json();
       setReport(data);
 
-      const qrUrl = `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/r/${id}`;
+      const qrUrl = `${process.env.NEXT_PUBLIC_BASE_URL || "https://chimney-final-health.vercel.app/"}/r/${id}`;
       const qr = await QRCode.toDataURL(qrUrl, {
         scale: 8,
         margin: 1,
